@@ -23,37 +23,36 @@ const buildReadMe = () => {
   {
     type: 'input',
     name: 'usageInformation',
-    message: 'Usage Information'
+    message: 'Usage Information:'
   },
   {
     type: 'input',
     name: 'contributionGuidelines',
-    message: 'Contribution Guidelines'
+    message: 'Contribution Guidelines:'
   },
   {
-    type: 'input'
-    name: 'testInstructions'
-    message: 'Test Instructions'
+    type: 'input',
+    name: 'testInstructions',
+    message: 'Test Instructions:'
   },
   {
     type: 'list',
     name: 'license',
-    message: 'License',
+    message: 'License:',
     choices: ['MIT License', 'GNU GPLv3', 'CC0-1.0', 'Mozilla Public License 2.0', 'Apache License 2.0']
   },
   {
     type: 'input',
     name: 'userName',
-    message: 'GitHub User Name'
+    message: 'GitHub Username:'
   },
   {
-    type: 'input'
+    type: 'input',
     name: 'email',
-    message: 'E-mail'
+    message: 'E-mail Address:'
   }
   ])
-    .then(({ title, description, installationInstructions, usageInformation, contributionGuidelines, testInstructions, license, username, email }) =>
-    {
+    .then(({ title, description, installationInstructions, usageInformation, contributionGuidelines, testInstructions, license, username, email }) => {
       switch(license){
         case 'MIT License':
           licenseBadge = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'
@@ -110,30 +109,28 @@ const buildReadMe = () => {
   ## <a name="questions">Questions</a>
 
   <a href='https://github.com/${username}'>${username}</a>
-
   ${email} 
   `
-
-      writeFile('ReadMe.md', `${readMe}`), err => {
+      writeFile('ReadMe.md', `${readMe}`, err => {
         if (err) {console.log(err) }
-    
+      })
     })
 }
 
 const start = () => {
-  prompt ({
+  prompt({
     type: 'list',
     name: 'start',
-    message: 'Create a ReadMe?',
+    message: 'Create a Readme?',
     choices: ['Yes', 'No']
   })
-  .then(({ start }) => {
-    if (start == 'Yes') {
-      buildReadMe()
-    } else {
-      console.log('OK')
-    }
-  })
+    .then(({ start }) => {
+      if (start == 'Yes') {
+        buildReadMe()
+      } else {
+        console.log('OK')
+      }
+    })
 }
 
-start ()
+start()
