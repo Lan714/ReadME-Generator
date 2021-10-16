@@ -20,7 +20,7 @@ Good README Generator Homework:
 
     ## <a name="desc">Description</a>
 
-  Code stuff
+  Code Stuff
 
   ##  <a name="install">Installation Instructions</a>
 
@@ -47,4 +47,4 @@ Good README Generator Homework:
   <a href='https://github.com/undefined'>undefined</a>
   codeguy@gmail.com 
   
-  ![image](https://user-images.githubusercontent.com/87465185/137601089-4f9b327b-8a94-40ff-86d4-4caabacad277.png)
+  https://watch.screencastify.com/v/l4a0WhFHxCCDPbYfIcQX
